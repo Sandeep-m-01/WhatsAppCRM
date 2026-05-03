@@ -1,163 +1,43 @@
-# WhatsApp CRM Simulation
+# 💼 CRM Assistant Chatbot
 
-This project is a simple web-based CRM system inspired by how businesses manage customer conversations on platforms like WhatsApp.
+> An intelligent WhatsApp-style chatbot that helps users find the perfect CRM for their business. Built with FastAPI (backend) and React (frontend). Features 8 major CRM companies with detailed comparisons, pricing, and smart recommendations.
 
-Instead of focusing only on UI, I built this to understand how real systems handle messages, APIs, and basic automation behind the scenes.
+## ✨ Features
 
----
+- 🔐 **Phone Number Login** – Indian mobile number validation (10 digits, starts with 6-9)
+- 💬 **Real-time Chat** – Auto-refresh every 2 seconds, smooth scrolling
+- 🏢 **8 Preloaded CRM Companies** – Salesforce, HubSpot, Zoho, Freshsales, Pipedrive, Microsoft Dynamics, LeadSquared, Apptivo
+- 📋 **List All CRMs** – View all companies with price, rating, and best use case
+- 🔍 **Company Details** – Get complete info including features, website, free trial
+- 📊 **Compare CRMs** – Side-by-side comparison of any two CRMs
+- 🎯 **Smart Recommendations** – Based on business size (small/enterprise), budget, or free plans
+- 🆓 **Free CRM Options** – See which CRMs offer free plans
+- 💰 **Pricing Overview** – Budget, mid-range, premium, and enterprise price buckets
+- 🎨 **Modern WhatsApp-like UI** – Clean, responsive, with quick-reply buttons
+- 🗑️ **Clear Chat History** – Delete all messages for a user with confirmation
+- 🧠 **In-memory Storage** – No database setup required – works out of the box
 
-## What it does
+## 🛠️ Tech Stack
 
-* Simulates sending messages from a user (like WhatsApp)
-* Stores and displays conversations based on phone number
-* Allows replies from an “agent”
-* Automatically responds to certain keywords (like "hello" or "price")
-* Shows conversations in a simple CRM-style format
+**Backend**  
+- FastAPI
+- Uvicorn
+- Pydantic
+- In-memory storage
 
----
+**Frontend**  
+- React (with Hooks)
+- CSS-in-JS (inline styles)
+- Fetch API
 
-## Why I built this
+## 📦 Installation
 
-I wanted to get a practical understanding of:
+### Prerequisites
+- Node.js (v14+)
+- Python (v3.8+)
+- npm or yarn
 
-* How APIs handle communication between frontend and backend
-* How customer interaction workflows are designed
-* How automation (like auto-replies) works in real products
-* How debugging and data flow work in a small system
-
-This project is more about **logic and real-world flow** than just design.
-
----
-
-## Tech stack
-
-**Frontend**
-
-* React
-
-**Backend**
-
-* FastAPI (Python)
-* Uvicorn
-
-**Tools**
-
-* Postman (for testing APIs)
-
----
-
-## Project structure
-
-```id="9fpbwo"
-WhatsappCRM/
-├── backend/
-│   ├── main.py
-│   ├── requirements.txt
-│
-├── frontend/
-│   ├── src/
-│   ├── package.json
-│
-└── README.md
-```
-
----
-
-## How to run it
-
-### Backend
-
-```id="p4u3s2"
-cd backend
-python3 -m venv venv
-source venv/bin/activate   # Mac/Linux
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
-
-Backend runs at:
-http://127.0.0.1:8000
-
-API docs:
-http://127.0.0.1:8000/docs
-
----
-
-### Frontend
-
-```id="3rt0sn"
-cd frontend
-npm install
-npm start
-```
-
-Frontend runs at:
-http://localhost:3000
-
----
-
-## API endpoints
-
-**Send message**
-
-```
-POST /message/send
-```
-
-Example:
-
-```id="7wscij"
-{
-  "phone": "9876543210",
-  "message": "hello",
-  "sender": "user"
-}
-```
-
-**Get messages**
-
-```
-GET /messages/{phone}
-```
-
-**Get conversations**
-
-```
-GET /conversations
-```
-
----
-
-## Auto-reply logic
-
-Right now, it’s simple:
-
-* If user sends "hello" → send greeting
-* If user sends "price" → send pricing message
-
-This is a basic version of how chat automation works in real systems.
-
----
-
-## What I learned
-
-* Connecting frontend and backend using APIs
-* Handling and debugging API responses
-* Structuring a simple but meaningful workflow
-* Thinking about real use cases instead of just features
-
----
-
-## Future improvements
-
-* Better UI (chat bubbles, sidebar layout)
-* Database instead of in-memory storage
-* Real WhatsApp API integration
-* Deployment
-
----
-
-## Author
-
-Sandeep M
-B.Tech CSE
+### Clone the repository
+```bash
+git https://github.com/Sandeep-m-01/WhatsAppCRM/tree/main
+cd WhatsAppCRM
